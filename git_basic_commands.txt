@@ -9,3 +9,7 @@ git push -u origin master
 …or push an existing repository from the command line
 git remote add origin https://github.com/gitmaster88/Python-Course-Udemy.git
 git push -u origin master
+
+
+…to clone a new repo in an empty folder
+git clone https://github.com/gitmaster88/Python-Course-Udemy.git
