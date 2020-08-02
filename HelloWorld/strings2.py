@@ -1,7 +1,6 @@
 parrot = 'Norwegian Blue'
 
 print(parrot)
-
 print(parrot[3])
 
 for i in range(0, len(parrot)):
