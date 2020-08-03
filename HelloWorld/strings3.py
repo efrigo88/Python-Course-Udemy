@@ -36,8 +36,10 @@ number = '9,346:583 593;493 973:944'
 separators = number[1::4]     # this could be very useful to clean numbers
 print(separators)
 
+# this was presented as an example to understand possible benefits of slicing with steps
 values = ''.join(char if char not in separators else ' ' for char in number).split()
 print([int(val) for val in values])
+
 
 
 
