@@ -4,6 +4,7 @@ for item in shopping_list:
     if item != 'spam':
         print('Buy ' + item)
 
+# continue statement
 print()
 for item in shopping_list:
     if item == 'spam':
