@@ -27,8 +27,4 @@ while True:
     n_of_guesses += 1
 
 
-#   binary search logic
-#    low + (high - low) // 2
-
-
 
