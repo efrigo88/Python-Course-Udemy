@@ -6,13 +6,15 @@ input('Press ENTER to start')
 
 guesses = 1
 
-while True:
-    print('\tGuessing in the range of {} to {}'.format(low, high))
+while low != high:
+    # print('\tGuessing in the range of {} to {}'.format(low, high))
     guess = low + (high - low) // 2
     high_low = input('My guess is {}. Should I guess higher or lower?'
-                     'Enter h or l, or c if my guess was correct: '.format(guess)).casefold()
+                     'Enter h or l, or c if my guess was correct: '
+                     .format(guess)).casefold()
     if high_low == 'h':
-        #   you can type the word 'pass' inside a block to prevent an error syntax, pass does not do anything
+        """ you can type the word 'pass' inside a block to prevent an error 
+        syntax, pass does not do anything """
         low = guess + 1
     elif high_low == 'l':
         high = guess - 1
@@ -22,4 +24,7 @@ while True:
     else:
         print('Please enter h, l or c')
 
-    guesses += 1
+    guesses += 1    # Augmented assignment
+else:   # example while-else
+    print('You thought of number {}'.format(low))
+    print('I got it in {} guesses'.format(guesses))

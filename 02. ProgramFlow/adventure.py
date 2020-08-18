@@ -1,5 +1,4 @@
 available_exits = ['north', 'south', 'east', 'west']
-
 chosen_exit = ''
 
 while chosen_exit not in available_exits:
@@ -7,5 +6,5 @@ while chosen_exit not in available_exits:
     if chosen_exit.casefold() == 'quit':
         print('Game Over')
         break
-if chosen_exit in available_exits:
+else:
     print("aren't glad you got out of there?")

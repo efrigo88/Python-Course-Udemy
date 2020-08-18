@@ -1,5 +1,5 @@
-string = 'I am going to try splitting this string now\nand I am going to do it again just now\nfunny stuff'
-print(string)
+split_string = 'I am going to try splitting this string now\nand I am going to do it again just now\nfunny stuff'
+print(split_string)
 
 tabbed_string = '1\t2\t3\t4\t5'
 print(tabbed_string)
@@ -12,11 +12,11 @@ print("The pet shop owner said \"No, no, 'e's uh,...he's resting\".")
 print("""The pet shop owner said "No, no, 'e's uh,...he's resting". """)
 
 #
-AnotherSplitString = """This line has been
+another_split_string = """This line has been
 split over
 several
 times"""
-print(AnotherSplitString)
+print(another_split_string)
 
 # given exercise
 """
