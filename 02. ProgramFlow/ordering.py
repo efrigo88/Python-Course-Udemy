@@ -8,7 +8,7 @@ for x in order_vector:
     result = result + x
 print(result)
 
-# when working with strings, you should transform it to list to be able to exchange values into it
+# when working with strings, you can transform them to lists to be able to exchange values into it
 chain = 'CBADEFGHIJKLMNOPQRSTUVWXYZ'
 chain_to_list = list(chain)
 
