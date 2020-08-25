@@ -1,3 +1,11 @@
+from builtins import print
+
+available_parts = ['Computer',
+                   'Monitor',
+                   'Keyboard',
+                   'Mouse',
+                   'Mouse Mat',
+                   'HDMI Cable']
 current_choice = '-'
 computer_parts = []     # create an empty list
 
@@ -18,14 +26,9 @@ while current_choice != '0':
             computer_parts.append('HDMI Cable')
     else:
         print('Please add options from the list below:')
-        print('1: Computer')
-        print('2: Monitor')
-        print('3: Keyboard')
-        print('4: Mouse')
-        print('5. Mouse Mat')
-        print('6. HDMI Cable')
+        for i in available_parts:
+            print('{}: {}'.format(available_parts.index(i) + 1, i))
         print('0: to finish')
-
     current_choice = input()
 
 print(computer_parts)
