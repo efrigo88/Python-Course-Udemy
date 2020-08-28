@@ -13,9 +13,20 @@ computer_parts = []     # create an empty list
 
 while current_choice != '0':
     if current_choice in valid_choices:
-        print('Adding {}'.format(current_choice))
         index = int(current_choice) - 1
-        computer_parts.append(available_parts[index])
+        chosen_part = available_parts[index]
+
+        if chosen_part in computer_parts:
+            computer_parts.remove(chosen_part)
+            print('Removing {}'.format(current_choice))
+        else:
+            computer_parts.append(available_parts[index])
+            print('Adding {}'.format(current_choice))
+
+        if not computer_parts:
+            print('Your list is empty')
+        else:
+            print('Your list now contains {}'.format(computer_parts))
     else:
         print('Please add options from the list below:')
         # we use enumerate to get the index as well as the element's name
