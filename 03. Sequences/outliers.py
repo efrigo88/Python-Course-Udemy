@@ -10,6 +10,7 @@ min_valid = 100
 max_valid = 200
 to_delete = []
 
+#   my rudimentary way of deleting elements from a list
 for index, value in enumerate(data):
     if (value < min_valid) or (value > max_valid):
         to_delete.append(value)
