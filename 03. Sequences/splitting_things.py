@@ -23,9 +23,12 @@ values_list = values.split()
 print(values_list)
 
 print()
+
+# Mini-challenge
 # Use a loop to produce a list of ints, rather than strings.
 # You can either modify the contents of the "value_list" list in place,
 # or create a new list of ints.
+
 # solution1, using an empty list
 value_list_int = []
 for value in values_list:
