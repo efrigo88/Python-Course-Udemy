@@ -38,28 +38,16 @@ albums = [
      ),
 ]
 
-# for band, disc, year, songs in albums:
-#     print('Band: {}, Disc: {}, Year: {}'.format(band, disc, year))
-#     for index, song in songs:
-#         print('\tTrack: {}, Name: {}'.format(index, song))
-
-
-# going through the elements
-# complete album
-album = albums[2]
-print(album)
-# list of songs
-songs = album[3]
-print(songs)
-# one particular song
-song = songs[2]
-print(song)
-# song name
-song_name = song[1]
-print(song_name)
-
-# all in one go, searching for the song "mayhem"
-mayhem = albums[3][3][2][1]
-print(mayhem)
-
-
+# Add your code below this comment.
+# title of the song "the way i choose"
+title_song = albums[1][3][5][1]
+print(title_song)
+# year that the album nightflight was released
+year = albums[2][2]
+print(year)
+# track number of the song "Kentish Town Waltz"
+track_nbr = albums[3][3][3][0]
+print(track_nbr)
+# the tuple representing the song "Keeping a Rendezvous"
+the_tuple = albums[2][3][1]
+print(the_tuple)
