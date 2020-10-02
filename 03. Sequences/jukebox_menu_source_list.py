@@ -1,3 +1,4 @@
+# I will call this list in jukebox_menu.py file using "from/import"
 albums = [
     ("Welcome to my Nightmare", "Alice Cooper", 1975,
      [
@@ -37,21 +38,3 @@ albums = [
      ]
      ),
 ]
-
-# my try of the jukebox_menu.py
-while True:
-    print('Please select the album')
-    for album_nbr, album in enumerate(albums):
-        print('{}: {}'.format(album_nbr + 1, album[0]))
-    album_choice = int(input())
-    if 0 < album_choice < 5:
-        print('Please select the song you want')
-        for song_nbr, songs in albums[album_choice - 1][3]:
-            print('{}: {}'.format(song_nbr, songs))
-        song_choice = int(input())
-        nbr, song = albums[album_choice - 1][3][song_choice - 1]
-        print('Playing the song {}: {}'.format(nbr, song))
-        print('=====================================')
-    else:
-        print('You exited the program')
-        break
