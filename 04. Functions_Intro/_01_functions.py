@@ -6,8 +6,7 @@ def multiply1():
 
 # with params
 def multiply2(x, y):
-    result = x * y
-    return result
+    return x * y
 
 
 # call first one
