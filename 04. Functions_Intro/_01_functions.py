@@ -6,6 +6,18 @@ def multiply1():
 
 # with params
 def multiply2(x, y):
+    """
+    Multiply 2 numbers.
+
+    Although this function is intended to multiply 2 numbers,
+    you can also use it to multiply a sequence.  If you pass
+    a string, for example, as the first argument, you'll get
+    the string repeated `y` times as the returned value.
+
+    :param x: First parameter (`int`)
+    :param y: Second parameter (`int`)
+    :return: The product of `x` and `y`.
+    """
     return x * y
 
 

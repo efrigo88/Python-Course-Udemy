@@ -13,6 +13,13 @@ def is_palindrome1(word):
 
 # more efficient one
 def is_palindrome2(word):
+    """
+    The function checks if the provided string is a palindrome.
+    A 'palindrome' is a string that reads the same forwards as backwards.
+
+    :param word: The string that you want to check.
+    :return: It returns True if a palindrome is provided, False otherwise
+    """
     # backwards = word[::-1]
     # return word == backwards
     return word[::-1].casefold() == word.casefold()
