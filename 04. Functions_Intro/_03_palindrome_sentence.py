@@ -2,7 +2,7 @@
 from _03_palindrome_source import is_palindrome2
 
 
-def palindrome_sentence(string):
+def palindrome_sentence(string: str) -> bool:
     clean_string = ''
     for letter in string:
         if letter.isalpha():

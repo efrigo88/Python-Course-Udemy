@@ -5,7 +5,7 @@ def multiply1():
 
 
 # with params
-def multiply2(x, y):
+def multiply2(x: float, y: float) -> float:
     """
     Multiply 2 numbers.
 

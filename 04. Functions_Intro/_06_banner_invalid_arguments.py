@@ -1,4 +1,18 @@
-def banner_text(text=' ', width=80):
+def banner_text(text: str = ' ', width: int = 80) -> None:
+    """Description:
+
+        It formats the text which you input. It centers the string and
+        it adds "**" to the beginning and end. The "text" argument must
+        not be larger than "width" or 80 if you do not provide one.
+
+        :param srt text: The text you want to format. Default = ' '.
+        :param int width: Desired width, default one would be provided
+               in case you have left it empty. Default = 80.
+        :raise: ValueError if text is larger than width or if text is larger
+                than 80 (when width arg was not provided).
+        :return: It does not return anything.
+
+    """
     if len(text) > width - 4:
         raise ValueError('String "{}" is larger than specified width {}'
                          .format(text, width))

@@ -1,4 +1,4 @@
-def fibonacci_pos(n):
+def fibonacci_pos(n: int) -> int:
     """Return the `n` th Fibonacci number, for positive `n`."""
     if n < 0:
         raise ValueError('"n" must be positive, you have entered "{}"'
@@ -17,7 +17,7 @@ def fibonacci_pos(n):
     return result
 
 
-def fibonacci_seq(n):
+def fibonacci_seq(n: int) -> str:
     """Return the Fibonacci sequence, given a positive `n` to limit it"""
 
     if n < 0:

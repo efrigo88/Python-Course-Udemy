@@ -12,7 +12,7 @@ def is_palindrome1(word):
 
 
 # more efficient one
-def is_palindrome2(word):
+def is_palindrome2(word: str) -> bool:
     """
     The function checks if the provided string is a palindrome.
     A 'palindrome' is a string that reads the same forwards as backwards.
@@ -36,4 +36,6 @@ while True:
     else:
         print('Exiting the program...')
         break
+
+
 
