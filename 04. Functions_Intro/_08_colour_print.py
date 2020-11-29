@@ -1,3 +1,9 @@
+"""
+    We install this package just to be able to view colours when we
+    execute the script from a windows command prompt.
+"""
+import colorama
+
 # Some ANSI escape sequences for colours and effects
 BLACK = '\u001b[30m'
 RED = '\u001b[31m'
@@ -26,6 +32,7 @@ def colour_print(text: str, effect: str) -> None:
     print(output_string)
 
 
+colorama.init()
 # test that the colour was reset
 print('This should be in a default terminal colour')
 colour_print('TEST', BLUE)
@@ -34,6 +41,7 @@ colour_print('TEST', CYAN)
 colour_print('TEST', BOLD)
 colour_print('TEST', UNDERLINE)
 colour_print('TEST', REVERSE)
+colorama.deinit()
 
 
 
