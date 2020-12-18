@@ -10,6 +10,7 @@ myList = ['a', 'b', 'c', 'd']
 #  the good one
 newString = ', '.join(myList)
 print(type(newString))
+print(myList)
 print(newString)
 
 # we can use a string as well
