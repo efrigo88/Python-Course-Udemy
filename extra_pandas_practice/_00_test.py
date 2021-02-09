@@ -1,4 +1,5 @@
 import pandas as pd
+from matplotlib import pyplot as plt
 
 # we import some data
 airports = pd.read_csv('C:/Python-Course-Udemy/extra_pandas_practice/airports.csv')
@@ -152,10 +153,35 @@ no_klax_freq2 = airport_freq.drop(airport_freq[airport_freq.airport_ident == 'KL
 # print(no_klax_freq1[no_klax_freq1.airport_ident == 'KLAX'])
 # print(no_klax_freq2[no_klax_freq2.airport_ident == 'KLAX'])
 
+'''
+We can export to a multitude of formats:
 
+df.to_csv(...)  # csv file
+df.to_hdf(...)  # HDF5 file
+df.to_pickle(...)  # serialized object
+df.to_sql(...)  # to SQL database
+df.to_excel(...)  # to Excel sheet
+df.to_json(...)  # to JSON string
+df.to_html(...)  # render as HTML table
+df.to_feather(...)  # binary feather-format
+df.to_latex(...)  # tabular environment table
+df.to_stata(...)  # Stata binary data files
+df.to_msgpack(...)	# msgpack (serialize) object
+df.to_gbq(...)  # to a Google BigQuery table.
+df.to_string(...)  # console-friendly tabular output.
+df.to_clipboard(...) # clipboard that can be pasted into Excel
 
+'''
 
-
+# Example of plotting...
+top_10 = by_country.nlargest(10, columns='airport_count')
+top_10.plot(
+    x='iso_country',
+    y='airport_count',
+    kind='barh',
+    figsize=(10, 7),
+    title='Top 10 countries with most airports') 
+plt.show()
 
 
 
