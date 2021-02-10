@@ -97,6 +97,40 @@ John C,Cadillac,Escalade,2007,2015-03-01
 Andrew D,Chrysler,Grand Voyager,2009,2011-07-30
 ```
 
+My query:
+
+SELECT customer_name,
+	   brand_name,
+	   model_name,
+	   vehicle_year,
+	   sale_dt	   
+FROM Sales s
+ inner join Customers c2
+  on s.customer_id = c2.customer_id
+ inner join Vehicles v2 
+  on s.vehicle_id = v2.vehicle_id 
+ inner join Vehicle_models vm
+  on v2.vehicle_model_id = vm.vehicle_model_id 
+ inner join (SELECT customer_id,
+				    max(sale_id) as last_sale
+			 from Sales s2
+			 where sale_dt < '2016-01-01'
+			 GROUP BY customer_id ) as aux
+  on s.customer_id = aux.customer_id AND 
+     s.sale_id = aux.last_sale
+WHERE sale_dt < '2016-01-01'
+order by customer_name
+
+ SELECT customer_id,
+	    max(sale_id) as last_sale
+ from Sales s2
+ where sale_dt < '2016-01-01'
+ GROUP BY customer_id
+ 
+ 
+ ---------------------------------------------
+
+
 ## next_vehicle
 
 Create a report of vehicles sold to customers that had previously purchased a vehicle. 
@@ -119,6 +153,38 @@ first_veh_brand,most_common_second_veh_brand,avg_days_between_sales
 Ford,Citroen,684.0
 Toyota,Suzuki,1145.0
 ```
+
+My query:
+
+SELECT first_veh_brand,
+	   most_common_second_veh_brand,
+	   avg_days_between_sales
+FROM (
+	SELECT brand_name as first_veh_brand,
+		   LEAD(brand_name, 1) OVER (PARTITION BY s.customer_id ORDER BY sale_dt) AS most_common_second_veh_brand,
+		   Cast ((JulianDay(LEAD(sale_dt, 1) OVER (PARTITION BY s.customer_id ORDER BY sale_dt)) - JulianDay(sale_dt)) As Int) as avg_days_between_sales,
+		   RANK() OVER (PARTITION BY s.customer_id ORDER BY sale_dt) AS rank
+	FROM Sales s
+	 inner join Vehicles v
+	  on s.vehicle_id = v.vehicle_id 
+	 inner join Vehicle_models vm 
+	  on v.vehicle_model_id = vm.vehicle_model_id
+	 inner join (select customer_id,
+				 	    COUNT(vehicle_id) as cars_bought
+				 from sales s
+				 group by customer_id
+				 HAVING COUNT(vehicle_id) > 1) as aux
+	  on s.customer_id = aux.customer_id
+	 order by s.customer_id, 
+	 		  sale_dt
+	 )
+WHERE rank < 2
+order by 3 desc
+
+
+
+----------------------------------------------------------------
+
 
 ## Environment setup
 
