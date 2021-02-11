@@ -73,7 +73,7 @@ class ReportGenerator:
                              'sum': 'total_value'})
 
         # csv file output
-        # renamed.to_csv(filename, index=False)
+        renamed.to_csv(filename, index=False)
 
     def new_customers(self, filename):
         """
@@ -130,7 +130,7 @@ class ReportGenerator:
             .sort_values('customer_name')
 
         # csv file output
-        # filtered.to_csv(filename, index=False)
+        filtered.to_csv(filename, index=False)
 
     def old_customers(self, filename):
         """
@@ -195,7 +195,7 @@ class ReportGenerator:
             .sort_values('customer_name')
 
         # csv file output
-        # final_df.to_csv(filename, index=False)
+        final_df.to_csv(filename, index=False)
 
     def next_vehicle(self, filename):
         """
@@ -249,7 +249,11 @@ class ReportGenerator:
 
         # persists the data to calculate RANK in sqlite, I couldn't
         # do it using pandas
-        reduced_df.to_sql("reduced_df_method4", self.con, if_exists="replace", index=False)
+        reduced_df.to_sql("reduced_df_method4",
+                          self.con,
+                          if_exists="replace",
+                          index=False)
+
         ranked_df = pd.read_sql_query("select * "
                                       "from (SELECT brand_name,"
                                       "sale_dt,"
@@ -271,8 +275,10 @@ class ReportGenerator:
         df_purged['next_sale_dt'] = pd.to_datetime(df_purged['next_sale_dt'])
 
         # date diff calculation
-        df_purged["avg_days_between_sales"] = df_purged["next_sale_dt"] - df_purged["sale_dt"]
-        df_purged["avg_days_between_sales"] = df_purged["avg_days_between_sales"] / np.timedelta64(1, 'D')
+        df_purged["avg_days_between_sales"] = \
+            df_purged["next_sale_dt"] - df_purged["sale_dt"]
+        df_purged["avg_days_between_sales"] = \
+            df_purged["avg_days_between_sales"] / np.timedelta64(1, 'D')
 
         # column selection / column rename / sorting by desired column
         final_df = df_purged[['brand_name',
