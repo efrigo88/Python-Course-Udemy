@@ -11,7 +11,13 @@ for animal in farm_animals:
 print('=' * 40)
 
 # transform from a list to a set
-wild_animals = set(['lion', 'tiger', 'panther', 'elephant', 'hare'])
+wild_animals_list = ['lion',
+                     'tiger',
+                     'panther',
+                     'elephant',
+                     'hare'
+                     ]
+wild_animals = set(wild_animals_list)
 print(wild_animals)
 for animal in wild_animals:
     print(animal)
