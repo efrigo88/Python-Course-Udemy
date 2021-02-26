@@ -2,9 +2,9 @@ import pandas as pd
 from matplotlib import pyplot as plt
 
 # we import some data
-airports = pd.read_csv('C:/Python-Course-Udemy/extra_pandas_practice/airports.csv')
-airport_freq = pd.read_csv('C:/Python-Course-Udemy/extra_pandas_practice/airport-frequencies.csv')
-runways = pd.read_csv('C:/Python-Course-Udemy/extra_pandas_practice/runways.csv')
+airports = pd.read_csv('files/airports.csv')
+airport_freq = pd.read_csv('files/airport-frequencies.csv')
+runways = pd.read_csv('files/runways.csv')
 
 # simple SELECT
 # print(airports)
