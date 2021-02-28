@@ -1,9 +1,9 @@
-…or create a new repository on the command line
-echo "# Python-Course-Udemy" >> README.md
-git init
-git add README.md
+create a new repository in github
+git init in the desired folder
+create .gitignore if desired
+git add .
 git commit -m "first commit"
-git remote add origin https://github.com/gitmaster88/Python-Course-Udemy.git
+git remote add origin https://github.com/gitmaster88/(name of the repo).git
 git push -u origin master
                 
 …or push an existing repository from the command line
