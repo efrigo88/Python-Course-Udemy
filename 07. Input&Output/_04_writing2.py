@@ -12,7 +12,6 @@
 # with open('writing/imelda3.txt', 'w') as imelda_file:
 #     print(imelda, file=imelda_file)
 
-
 with open('writing/imelda3.txt', 'r') as imelda_file:
     contents = imelda_file.readline()
 
