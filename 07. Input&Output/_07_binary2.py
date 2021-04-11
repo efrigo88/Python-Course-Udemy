@@ -19,6 +19,6 @@ with open('/Users/emilianofrigo/Documents/git-repos/projects/Python-Course-Udemy
     print(g)
     h = int.from_bytes(bin_file.read(4), 'big')
     print(h)
-    # this number is different because we stored it in another format
+    # this number is different because it was stored in another format
     i = int.from_bytes(bin_file.read(4), 'big')
     print(i)
