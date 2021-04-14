@@ -29,15 +29,16 @@ imelda = ('More Mayhem',
 #     print(track_number, track_title)
 
 ##########################################
-# we can pickle anything that we want into the file
+# we can pickle anything that we want into the file and load them back in
 even = list(range(0, 10, 2))
 odd = list(range(1, 10, 2))
 
+# by using the parameter protocol, written lines end up being more readable
 with open('/Users/emilianofrigo/Documents/git-repos/projects/Python-Course-Udemy/07. Input&Output/writing/imelda.pickle', 'wb') as pickle_file:
-    pickle.dump(imelda, pickle_file)
-    pickle.dump(even, pickle_file)
-    pickle.dump(odd, pickle_file)
-    pickle.dump(2998302, pickle_file)
+    pickle.dump(imelda, pickle_file, protocol=pickle.HIGHEST_PROTOCOL)
+    pickle.dump(even, pickle_file, protocol=0)
+    pickle.dump(odd, pickle_file, protocol=pickle.DEFAULT_PROTOCOL)
+    pickle.dump(2998302, pickle_file, protocol=pickle.DEFAULT_PROTOCOL)
 
 with open('/Users/emilianofrigo/Documents/git-repos/projects/Python-Course-Udemy/07. Input&Output/writing/imelda.pickle', 'rb') as imelda_pickled:
     imelda2 = pickle.load(imelda_pickled)
@@ -69,6 +70,3 @@ for i in odd_list:
 print('=' * 40)
 
 print(x)
-
-
-
