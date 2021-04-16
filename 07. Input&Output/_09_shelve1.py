@@ -37,4 +37,3 @@ fruit['pie'] = 'a sour, green citrus fruit'
 print(fruit['lemon'])
 print(fruit['grape'])
 fruit.close()
-
