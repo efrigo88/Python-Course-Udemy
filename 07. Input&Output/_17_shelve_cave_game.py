@@ -34,7 +34,7 @@ while True:
     # if the answer contain only one letter
     direction = direction.upper()
     if direction in allExits:
-        loc = str(allExits[direction])
+        loc = allExits[direction]
     else:
         print(f'You cannot go in this -{direction}- direction, please choose a valid one')
 
