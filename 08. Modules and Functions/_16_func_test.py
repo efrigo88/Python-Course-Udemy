@@ -18,7 +18,6 @@ def basic_mult(a, b):
     return a * b
 
 
-
 if __name__ == '__main__':
     
     test = generate_encription()
